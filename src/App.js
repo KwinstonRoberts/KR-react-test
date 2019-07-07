@@ -64,7 +64,7 @@ class App extends Component {
                     </div>
                   <div className="card-image">
                     <figure className="image is-4by3">
-                      <img src={restaurant.image_url}/>
+                      <img alt={restaurant.name + 'interior image'} src={restaurant.image_url}/>
                     </figure>
                   </div>
                   <div className="card-content">
