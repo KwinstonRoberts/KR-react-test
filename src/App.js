@@ -66,7 +66,7 @@ class App extends Component {
                   <div className="card-content">
                     <p>{restaurant.address}</p><br/>
                     <div className="columns">
-                      <h1 class="column is-one-fourth">{getPrice(restaurant.price)}</h1>
+                      <h1>{getPrice(restaurant.price)}</h1>
                     </div>
                   </div>
                 </div>
