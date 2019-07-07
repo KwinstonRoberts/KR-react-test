@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   fetchRestaurants(event){
-    const url = 'http://opentable.herokuapp.com/api/restaurants?city=' + event.target.value.toLowerCase();
+    const url = 'https://opentable.herokuapp.com/api/restaurants?city=' + event.target.value.toLowerCase();
     fetch(url)
     .then(response => response.json())
     .then(data => {
