@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import './App.css';
+import SearchBar from './search-bar';
 
 class App extends Component {
   constructor(props) {
@@ -48,11 +49,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="title has-text-white">Welcome to Kelp!<br/> The search engine for restaurants!</h1>
           <br/>
-          <div className="field">
-            <div className="control">
-                <input onChange={this.fetchRestaurants} className="input is-primary" type="text" placeholder="City"/>
-            </div>
-          </div>      
+         <SearchBar fetchRestaurants={this.fetchRestaurants}></SearchBar>  
         </header>
         <section className="section">
           <div className="columns is-multiline">
@@ -77,26 +74,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-    this.fetchRestaurants = this.fetchRestaurants.bind(this);
-  }
-
-  render() {
-      return (
-          <React.Fragment>
-              <div className="section">
-                  <div className="field">
-                  <div className="control">
-                      <input onChange="{this.fetchRestaurants}" className="input is-primary" type="text" value="Toronto" placeholder="City"/>
-                  </div>
-                  </div>
-              </div>
-          </React.Fragment>
-      )}
 }
 
 export default App;
