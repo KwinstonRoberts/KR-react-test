@@ -25,7 +25,7 @@ class App extends Component {
   componentDidMount() {
     window.addEventListener('search', this.fetchRestaurants);
     // Call our fetch function below once the component mounts
-    fetch(`http://opentable.herokuapp.com/api/restaurants?city=toronto`)
+    fetch(`https://opentable.herokuapp.com/api/restaurants?city=toronto`)
     .then(response => response.json())
     .then(data => this.setState({restaurants: data.restaurants})); 
   }
