@@ -63,11 +63,6 @@ class App extends Component {
                   <div className="card-header">
                     <h1 className="card-header-title">{restaurant.name}</h1>
                   </div>
-                  <div class="card-image">
-                    <figure className="image is-4by3">
-                     <img width="100%" height="600" src={"https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=restaurant.address.replace(' ','%20')&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;"}>
-                    </figure>
-                  </div>
                   <div className="card-content">
                     <p>{restaurant.address}</p><br/>
                     <div className="columns">
