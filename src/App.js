@@ -48,9 +48,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header has-background-primary">
-          <h1 className="title has-text-white">Welcome to Kelp!<br/> The search engine for restaurants!</h1>
+          <h1 className="title">Welcome to Kelp!<br/> The search engine for restaurants!</h1>
           <br/>
-          <h3 className="text-center">Enter a City to start looking!</h3>
+          <h3 className="title text-center">Enter a City to start looking!</h3>
          <SearchBar fetchRestaurants={this.fetchRestaurants}></SearchBar>  
         </header>
         <section className="section">
