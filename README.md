@@ -25,44 +25,90 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.##Technical questions and answers
 
-### `npm run eject`
+1. **How long did you spend on the coding test? What would you add to your solution if you had more time? If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I spent roughly 5 hours setting up, fixing various errors, perfecting the api call, and setting up ther heroku server and polishing various parts of the site. With more time, I would have liked to add a google maps area to each address card to add context to the address, that way a user could have a better idea of surounding intersections.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.**
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+One feature recently added to angular 8 is the ability to make draggable elements througgh angulars built in material css functionality. Due to NDA constraints, I'm unsure that I'm able to submit any code from it, though it looks roughly like this:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```javascript
+<div class="draggable-dialog-component draggable-boundary" [style.height.px]="boundaryHeight">
+  <div class="draggable-box" cdkDrag fxLayout="column" #draggableContainer
+       cdkDragBoundary=".draggable-boundary"
+       [ngClass]="{
+        'full-width': activityWindowConfig.isFullScreen,
+        'min-width': !activityWindowConfig.isFullScreen
+       }"
+      [@zoomInRightOnEnter] [@zoomOutRight]="isLeaving"
+    >
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    <div class="draggable-header w100p" cdkDragHandle #draggableContent
+	 cdkDragRootElement=".draggable-box"
+         fxLayout="row" [style.background]="compConfig.headerColor">
+      <div fxLayout="column" class="ml-md" fxLayoutAlign="center start" fxFlex="60%">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGapC="md">
+          <div>
+            <svg fill="currentColor" viewBox="0 0 24 24" class="move-around-button">
+              <path
+                d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+              <path d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+          </div>
+          <div>title</div>
+        </div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+      </div>
+      <div fxLayout="column " fxLayoutAlign="center end" fxFlex="40%" class="mr-md">
+        <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGapC="md">
+        
+...
+          
+```
 
-### Code Splitting
+3. **How would you track down a performance issue in production? Have you ever had to do this?**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+At my current job, we use site 24/7 to track various performance and server issues, and post them in a slack channel visible to the team andd client. This allows on-call members to handle and delegate tthe issues as needed.
 
-### Analyzing the Bundle Size
+4. **How would you improve the API that you just used?**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+I would have also included a review rating. as it is now, the cards lack context without a rating to help decide which restaurant is best
 
-### Making a Progressive Web App
+5.	**Please describe yourself using JSON.**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```json
+{
+   "name":"Kyle Roberts",
+   "Occupation": "Web Developer",
+   "skills":
+   [
+       "Git",
+       "CSS"
+       "Sass/Less"
+       "HTML5",
+       "javascript/Typescript"
+       "AngularJS",
+       "Angular",
+       "Ruby/Rails",
+       "Wordpress",
+       "Python",
+       "Agile",
+       "Design"
+   ],
+   "qualities":
+   [
+       "Fast Learning",
+       "Analytical Thinker",
+       "Loves to solve puzzles"
+   ],
+   "fun_fact":
+   [
+       "Once built a go kart in auto shop, but never added the brakes",
+   ]
+}
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
